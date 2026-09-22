@@ -1,0 +1,45 @@
+name: CLCLLC Build
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+
+      - name: Set up Java 17
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: "17"
+          cache: maven
+
+      - name: Verify environment
+        run: |
+          echo "=== CLCLLC BUILD ENVIRONMENT ==="
+          node --version
+          java -version
+          mvn --version
+
+      - name: Compile
+        run: mvn --batch-mode clean compile
+
+      - name: Test
+        run: mvn --batch-mode test
+
+      - name: Verify
+        run: mvn --batch-mode verify
+
+      - name: CLCLLC build complete
+        run: echo "CLCLLC BUILD PASSED"
