@@ -42,3 +42,10 @@ jobs:
 
       - name: "Execute Main Infrastructure Build"
         run: terraform apply -auto-approve
+      - name: "Zero-Trust Login to AWS"
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          audience: ://amazonaws.com
+          aws-region: us-east-1
+          # DOUBLE CHECK THIS LINE: Make sure there are no trailing spaces or missing characters
+          role-to-assume: arn:aws:iam::216822717804:role/GitHubActionsWorkflowDeployer
