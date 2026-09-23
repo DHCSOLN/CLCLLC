@@ -3,7 +3,7 @@ import json
 import re
 import subprocess
 
-PDF = Path("foundation/source/Script (3).pdf")
+PDF = Path("foundation/source/Script 3.pdf")
 OUT = Path("foundation/extracted")
 MANIFEST = Path("foundation/manifests")
 
@@ -66,7 +66,7 @@ for index, match in enumerate(matches):
     })
 
 manifest = {
-    "foundation": "Script (3).pdf",
+    "foundation": "Script 3.pdf",
     "sourcePages": 242,
     "tabsDetected": len(tabs),
     "tabs": tabs
