@@ -3,14 +3,14 @@ import json
 import re
 import subprocess
 
-PDF = Path("foundation/source/Script926.pdf")
+PDF = Path("foundation/source/Script (3).pdf")
 OUT = Path("foundation/extracted")
 MANIFEST = Path("foundation/manifests")
 
 OUT.mkdir(parents=True, exist_ok=True)
 MANIFEST.mkdir(parents=True, exist_ok=True)
 
-text_file = OUT / "Script926.txt"
+text_file = OUT / "Script (3).txt"
 
 subprocess.run(
     [
@@ -66,7 +66,7 @@ for index, match in enumerate(matches):
     })
 
 manifest = {
-    "foundation": "Script926.pdf",
+    "foundation": "Script (3).pdf",
     "sourcePages": 242,
     "tabsDetected": len(tabs),
     "tabs": tabs
