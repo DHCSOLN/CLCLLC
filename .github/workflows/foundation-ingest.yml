@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "foundation/source/Script (3).pdf"
+      - "foundation/source/Script 3.pdf"
       - "scripts/ingest-foundation.py"
       - "scripts/classify-foundation.py"
 
@@ -37,8 +37,8 @@ jobs:
 
       - name: Verify foundation PDF
         run: |
-          test -f foundation/source/Script (3).pdf
-          pdfinfo foundation/source/Script (3).pdf
+          test -f foundation/source/Script 3.pdf
+          pdfinfo foundation/source/Script 3.pdf
 
       - name: Read complete foundation
         run: |
