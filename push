@@ -1,0 +1,10 @@
+git add \
+  foundation/source/Script926.pdf \
+  scripts/ingest-foundation.py \
+  scripts/classify-foundation.py \
+  .github/workflows/foundation-ingest.yml
+
+git commit \
+  -m "Add SOLN foundation document ingestion"
+
+git push origin main
